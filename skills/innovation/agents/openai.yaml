@@ -1,0 +1,4 @@
+interface:
+  display_name: "GPS Innovation"
+  short_description: "Test novelty, baselines, and validation"
+  default_prompt: "Use $innovation to red-team the innovation claims and test evidence in this project."

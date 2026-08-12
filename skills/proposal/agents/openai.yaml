@@ -1,0 +1,4 @@
+interface:
+  display_name: "GPS Proposal"
+  short_description: "Shape an evidence-led project book"
+  default_prompt: "Use $proposal to audit this Guochuang project-book structure and evidence links."

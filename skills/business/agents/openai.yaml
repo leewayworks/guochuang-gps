@@ -1,0 +1,4 @@
+interface:
+  display_name: "GPS Business"
+  short_description: "Audit customers, economics, and scale"
+  default_prompt: "Use $business to audit the customer and commercialization logic of this Guochuang project."

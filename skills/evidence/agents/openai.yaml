@@ -1,0 +1,4 @@
+interface:
+  display_name: "GPS Evidence"
+  short_description: "Map every claim to a source"
+  default_prompt: "Use $evidence to build a claim-evidence ledger from these project materials."
