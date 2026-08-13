@@ -1,0 +1,64 @@
+schema_version: 1
+source_hierarchy:
+  - level: official_hard
+    rank: 1
+    meaning: Primary contest notices, annexes, officially published rules, and binding registration requirements.
+  - level: official_dynamic
+    rank: 2
+    meaning: Live official service-site notices, schedules, and updates that can supersede operational details.
+  - level: local_execution
+    rank: 3
+    meaning: School or provincial implementation notices; binding locally where consistent with higher sources.
+  - level: interpretive
+    rank: 4
+    meaning: Policy briefs and explainers; useful context that cannot override official sources.
+  - level: historical_baseline
+    rank: 5
+    meaning: Prior-year rules and de-identified historical case methods; comparison only, never a current official rule.
+
+records:
+  cicic-2026-review-rules-status:
+    year: 2026
+    level: official_dynamic
+    status: pending
+    authority: 中国国际大学生创新大赛组委会（全国大学生创业服务网）
+    retrieved_at: '2026-08-13'
+    url: https://cy.ncss.cn/?_wv=5
+    role: current_year_review_rules_status
+    note: 2026 大赛通知已发布；官网资料下载区的评审规则入口仍标记为待发布。
+  cicic-2025-rules-official:
+    year: 2025
+    level: official_hard
+    status: current_for_2025
+    authority: 中国国际大学生创新大赛组委会（全国大学生创业服务网）
+    published_at: '2025-05-20'
+    url: https://cy.ncss.cn/en/notifications/2c93f4c696aa01a10196eca57202006a
+    role: authoritative_2025_release
+    use_for_2026: historical_baseline
+  cicic-2025-rules-19p-mirror:
+    year: 2025
+    level: official_hard
+    status: current_for_2025
+    authority: 高校完整附件镜像（cupk.edu.cn）
+    url: https://www.cupk.edu.cn/cxcy/upload/resources/file/2025/06/23/102490.pdf
+    role: content_verification_mirror
+    paired_with: cicic-2025-rules-official
+    use_for_2026: historical_baseline
+  cicic-2025-old-structure-17p:
+    year: 2025
+    level: historical_baseline
+    status: superseded
+    authority: 中国农业大学站点附件
+    url: https://water.cau.edu.cn/module/download/downfile.jsp?classid=0&filename=446725a841a348a6a78ef79a49b83f73.pdf
+    superseded_by: cicic-2025-rules-official
+    conflict: >-
+      The 17-page document retains an older five-dimension structure and lacks the
+      2025 enterprise-proposition and results-transfer grouping found in the 19-page release.
+    use: Do not route, score, or override a 2025 registry record with this document.
+
+conflict_handling:
+  - Preserve both records, their dates, source level, and the unresolved question; do not silently select a favorable rule.
+  - Prefer the lower numeric rank only when sources address the same issue and neither is superseded.
+  - A local execution rule may add operational requirements but cannot relax official_hard eligibility or integrity rules.
+  - For a 2026 project, label every selected 2025 rubric `historical_baseline` and state `current_year_rubric_status: pending` until an applicable 2026 rule is recorded.
+  - Historical case patterns may select a method of proof; they never supply project facts, scores, or award expectations.

@@ -1,1 +1,27 @@
-{"name":"guochuang-gps","description":"Guochuang GPS preparation skills for the Chinese International College Students’ Innovation Competition.","version":"0.1.0","skills":["./skills"]}
+{
+  "name": "guochuang-gps",
+  "description": "Evidence-gated project positioning and material review for the China International College Students' Innovation Competition.",
+  "version": "0.2.0",
+  "author": {
+    "name": "leewayworks",
+    "url": "https://github.com/leewayworks"
+  },
+  "homepage": "https://github.com/leewayworks/guochuang-gps",
+  "repository": "https://github.com/leewayworks/guochuang-gps",
+  "license": "MIT",
+  "keywords": ["education", "competition", "evidence", "project-positioning"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Guochuang GPS",
+    "shortDescription": "Evidence-gated project diagnosis for competition teams",
+    "longDescription": "Review project positioning, innovation, market logic, and evidence gaps against the applicable competition track and rubric.",
+    "developerName": "leewayworks",
+    "category": "Productivity",
+    "capabilities": ["Read", "Analyze"],
+    "websiteURL": "https://github.com/leewayworks/guochuang-gps",
+    "defaultPrompt": [
+      "梳理这个项目的核心优势、前三卖点和证据缺口。",
+      "按对应赛道评分维度检查项目还缺什么。"
+    ]
+  }
+}

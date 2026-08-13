@@ -5,6 +5,8 @@ description: Use when drafting, restructuring, or auditing a Chinese Internation
 
 # Proposal
 
+Apply the shared policies in `gps-common`. When saving a Markdown report, use the common project-name rule with topic `项目书`.
+
 A project book should let a reviewer follow the argument and check the important claims. Start with the argument map, then revise prose.
 
 ## Working spine

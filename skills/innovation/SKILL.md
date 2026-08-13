@@ -1,32 +1,45 @@
 ---
 name: innovation
-description: Use when testing whether a Guochuang project is genuinely innovative, technically differentiated, research-grounded, and supported by reproducible validation.
+description: Use when a Guochuang project needs technical novelty, mechanism, baseline, comparison, reproducibility or validation claims examined.
 ---
 
 # Innovation
 
-Separate four questions: what is new, what is hard, what is better and what the students learned. A new label or an AI component does not prove innovation.
+Apply the shared policies in `gps-common`. When saving a Markdown report, use the common project-name rule with topic `创新`.
 
-## Innovation card
+Test four separate questions: what changed, why it is difficult, what improved under which conditions, and what the students themselves contributed. Adding AI, a patent or a new label does not answer them.
 
-For each claimed innovation record: prior art or baseline, changed mechanism, measured delta, test condition, sample or repeat count, independent source, student role and known limitation.
+## Own this work
 
-State whether the claim is technical, product, process, social, business-model or craft innovation. Use the matching comparison, not one generic standard for every project.
+Own mechanism comparison, prior art, baseline fairness, test design, measured delta, reproducibility and technical limitations. `positioning` owns the final project advantage and selling-point ranking. Pass it evidence-bounded innovation candidates rather than taking over the whole narrative.
 
-## Validation ladder
+## Build an innovation card
 
-1. Mechanism: can the team explain what changed?
-2. Baseline: is the comparison fair and named?
-3. Measurement: are metric, unit, condition, sample and repeat count recorded?
-4. Use: did a real user, pilot or third party observe the result?
-5. Transfer: does it work beyond the selected example?
+For each claim record:
 
-A project can be strong at one level and weak at the next. Say which level the evidence reaches.
+`claim_id`, `innovation_type`, `prior_art_or_baseline`, `changed_mechanism`, `measured_delta`, `metric_unit`, `condition`, `sample_or_repeats`, `evidence_ids`, `independent_source`, `student_role`, `known_limitation`.
 
-## Red-team checks
+Classify an advantage candidate as:
 
-Ask whether the result is a parameter adjustment, an untested assertion, a borrowed patent, a cherry-picked comparison, a metric with no baseline or a result the students cannot explain. Request raw logs, test reports, prototypes, papers, patents or user trials as appropriate.
+- `owned`: the team controls the mechanism or delivery capability and can explain the evidence;
+- `conditional`: credible only within stated conditions or maturity;
+- `borrowed`: mainly supplied by a laboratory, partner, adviser or licensed asset;
+- `pseudo`: publicity language without a bounded comparison and proof.
 
-## Deliverables
+## Use the validation ladder
 
-Return an innovation matrix, missing controls, three defensible one-sentence claims and a confidence band. Mark "internationally leading", "first" and similar language unsupported until an independent source and a defined comparison are available.
+1. Mechanism: the team can explain what changed.
+2. Baseline: the comparison is named and fair.
+3. Measurement: metric, unit, condition, sample and repeats are recorded.
+4. Use: a real user, field trial or independent party observed the result.
+5. Transfer: the result survives beyond the selected example.
+
+State the highest level the evidence reaches. A performance result is not itself an innovation; connect it to the changed mechanism and baseline.
+
+## Red-team the claim
+
+Check for parameter tuning, borrowed IP, cherry-picked baselines, data leakage, missing controls, unsupported superlatives, weak student ownership and a result that cannot be reproduced. Treat `first`, `internationally leading` and similar claims as `missing` until an independent source defines the comparison scope.
+
+## Deliver
+
+Return an innovation matrix, highest validation level, missing controls, owned and borrowed contributions, three defensible claim candidates or explicit empty slots, and confidence with limitations.

@@ -1,61 +1,86 @@
 ---
 name: navigator
-description: Use when a user asks for a GPS review of a Guochuang project folder or materials, needs a competition track or stage check, or wants a readiness diagnosis and next-step plan.
+description: Use when a user asks for a GPS review of a Guochuang project folder or materials, needs track or group routing, or wants a readiness diagnosis and next-step plan.
 ---
 
-# GPS Navigator
+# GPS navigator
 
-Use navigator as the default entry point. When a user gives a project folder and asks for a GPS or Guochuang review, start the review without requiring a full intake form. Inspect the folder first, infer only what the materials support, and ask for the few missing facts that can change eligibility or routing.
+Act as the user-facing coordinator for GPS. Inspect the supplied scope, lock the rule basis, choose the smallest useful set of specialist Skills, then synthesize their findings. Do not replace specialist judgment with a generic review.
 
-## One-line entry
+Apply the shared policies in `gps-common`. Load only the references needed for the current route.
 
-Accept a request such as:
+## Choose a mode
 
-`Use GPS to review G:\path\to\project`
-
-Treat the supplied path as the project scope. If the user names a competition, year, track or stage, use it. Otherwise identify those fields from the materials. If the year is still unknown, ask after the first inventory and label any provisional use of the current rule card as `unconfirmed`.
-
-## Automatic intake
-
-Before asking questions:
-
-1. Recursively inventory PDF, PPTX, DOCX, XLSX, image, video, text, source-code and archive files.
-2. Read filenames, document text, metadata and obvious project headers to identify project name, year, track, group, stage and deadline.
-3. Detect likely project-book, deck, defense, test, IP, customer, finance, team-contribution and survey materials.
-4. Record what was inspected and what needs visual review. Do not treat an empty text extraction as an empty page.
-5. Ask only for missing facts that affect the rule gate or the next action. Continue the material audit while those answers are pending. If the host cannot parse a format or load another Skill, record that limitation and continue with the available material.
-
-Do not infer a qualification from a title, a filename, a past award or a visual style. Keep `source_verified`, `user_asserted`, `inferred_for_routing` and `unknown` distinct.
-
-## Route
-
-1. **Rule lock.** Load `references/rules-2026.md`. Check notice version, track, group, registration, leader requirements, age, team size, equity, prior national awards, IP ownership, integrity and local deadlines. Preserve conflicts between the main notice and an industry annex, then assign a confirmation owner.
-2. **MAP pass.** Build the claim-to-evidence ledger. A quantitative claim is verified only when its source, page or slide, unit, test condition, date and owner are recorded.
-3. **Specialist selection.** Load only the Skills suggested by the inventory. If the host supports dynamic Skill loading, invoke them directly; otherwise name the recommended passes in the report. Use: `proposal` for a project book, `deck` for slides, `defense` for a script or rehearsal, `innovation` for technical validation, `business` for customers and finance, and `evidence` for source and contradiction checks. Load `evidence` whenever claims or sources need checking.
-4. **Readiness pass.** Normalize the findings and run `scripts/gps_score.py` when the input contains the required fields. Report `score`, `raw_score`, `readiness_band`, evidence coverage, confidence, blocking gaps, compliance findings, notice version and rubric status together. The script is a GPS heuristic, not an official rubric.
-5. **CAMP plan.** Turn the three largest gaps into `owner + artifact + due date + acceptance check`. Use a short rescue plan only when the deadline is within 72 hours.
-
-## Stage routing
-
-| Stage | Main question | Minimum hand-off |
+| Mode | Use it when | Output |
 | --- | --- | --- |
-| Discovery | Is the problem real and worth pursuing? | interview log, problem statement, rule unknowns |
-| Build | Does the intervention work under a stated condition? | baseline, test record, student contribution map |
-| School or provincial review | Can a reviewer verify the story quickly? | project-book ledger, slide table, question bank |
-| National preparation | Which claims fail under interruption? | timed drill, screen evidence list, risk owners |
+| Full diagnosis | The user supplies a project folder or asks for an overall strategy, advantages and rubric gaps | Eleven-section report below |
+| Quick triage | Materials are thin or the deadline is close | Rule basis, strongest supported point, largest blocker and next three actions |
+| Narrow specialist | The user asks only about positioning, innovation, market, evidence, proposal, deck or defense | The owning Skill's adaptive contract, without padding it into a full report |
 
-## Output contract
+## Inspect before asking
 
-Return exactly these headings:
+1. Inventory the files in scope. Record what was opened, what needs visual review and what the host cannot parse.
+2. Extract only supported facts about project name, year, track, group, category, stage and deadline.
+3. Separate `verified`, `user_asserted`, `inferred_for_routing` and `unknown`.
+4. Ask only for a missing fact that changes eligibility, rubric routing or the next action. Continue read-only inspection while an answer is pending.
 
-`Snapshot`, `Eligibility gate`, `Current level`, `GOLD gap`, `MAP ledger summary`, `Next 3 actions`, `Open questions`.
+Do not infer eligibility from a filename, visual style, past award or organization logo.
 
-`Snapshot` must include the path, files inspected, project facts and unknowns. `Eligibility gate` must separate verified, user-asserted, unresolved and conflicting rules. `MAP ledger summary` must include counts or a compact table. `Next 3 actions` must be concrete tasks, not general advice.
+## Route by primary intent
 
-`Current level` is a conditional readiness band. Never present it as a predicted award. Mention that the 2026 evaluation rules remain pending when that is the current source status. If the source set is too thin to assess, say `Not assessable` and explain what would change that status.
+| Primary intent | Owner | Required companion |
+| --- | --- | --- |
+| Overall review, rule lock, synthesis | `navigator` | `evidence` |
+| Essence, core advantages, selling points, innovation framing, market opportunity | `positioning` | `evidence`; add `innovation` or `business` when needed |
+| Technical novelty, baseline and validation | `innovation` | `evidence` |
+| Customer, transaction, finance and scale | `business` | `evidence` |
+| Claim audit and contradictions | `evidence` | none |
+| Project book | `proposal` | `evidence` when claims are reviewed |
+| Slides | `deck` | `evidence` when claims are reviewed |
+| Questions and rehearsal | `defense` | `evidence` for answer cards |
+
+If two Skills could own the task, route by the requested deliverable. `positioning` owns what the project should be known for. `innovation` tests a technical claim. `business` tests the transaction and delivery logic.
+
+## Lock rules and evidence
+
+Read `references/rules-2026.md` for the current notice boundary and `references/rubrics-2025.json` for the seven supported scoring cards. Resolve `year + track + group` before producing rubric alignment.
+
+For a 2026 project, label the matching 2025 card `historical_baseline` and the current-year rubric `pending`. For 2025, label that card `official_hard`. If the route is unknown, ask a routing question and do not score.
+
+Normalize materials with `references/material-schema.md`. A local evidence path earns no credit until the file exists relative to the project data file and is inspected. A number also needs a claim link and locator or condition.
+
+Run `scripts/gps_score.py` only after the route and normalized fields are available. Report `rubric_alignment_score`, GPS readiness, evidence coverage, gates, caps and source status separately. These are preparation diagnostics, not judging results.
+
+## Full diagnosis contract
+
+Use exactly these headings for a full diagnosis:
+
+1. `Snapshot`
+2. `Eligibility and rubric basis`
+3. `Project essence`
+4. `Core advantages`
+5. `Top 3 selling points`
+6. `Innovation and opportunity`
+7. `Rubric gap matrix`
+8. `MAP ledger summary`
+9. `GOLD gap`
+10. `Next 3 actions`
+11. `Open questions`
+
+Tag each material conclusion as `verified`, `supported`, `conditional`, `hypothesis`, `missing` or `contradicted`. If fewer than three selling points are defensible, show the empty slots and the evidence needed to fill them.
+
+Each next action uses `owner + artifact + due date + acceptance check`. If the deadline is within 72 hours, prefer a rescue plan that protects eligibility, the strongest claim and the answer evidence.
+
+## Saved report naming
+
+Follow the saved Markdown report rules in `gps-common`. Use the full-diagnosis, quick-triage or specialist filename for the selected mode. A user-supplied filename or destination always takes precedence.
 
 ## Hard stops
 
-Do not write a submission-ready number, customer, patent, experiment or team contribution when its source is missing. Do not turn a historical slide template or a 2025 score table into a 2026 requirement. Do not upload, copy or commit the user's project materials unless the user explicitly asks for that action.
+- Do not create a number, customer result, patent status, experiment result or team contribution.
+- Do not call a performance result an innovation without the changed mechanism and comparison baseline.
+- Do not turn a historical case, old scoring card or training slide into a current rule.
+- Do not use award names as readiness bands or claim that GPS predicts an award.
+- Do not copy or commit user project materials without explicit permission.
 
-References: `references/rules-2026.md` and `references/material-schema.md`.
+References: `references/rules-2026.md`, `references/material-schema.md`, `references/rubrics-2025.json`.

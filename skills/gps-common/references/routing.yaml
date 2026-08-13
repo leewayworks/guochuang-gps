@@ -1,0 +1,49 @@
+schema_version: 1
+defaults:
+  governance_owner: gps-common
+  evidence_rule: >-
+    Add evidence whenever the request concerns positioning, advantages, selling points,
+    innovation, market or beneficiary opportunity, scoring, rubric gaps, or a conclusion
+    drawn from project claims. A specialist may not upgrade a claim above inspected evidence.
+
+modes:
+  full_diagnosis:
+    use_when:
+      - The user requests a GPS review, readiness diagnosis, project review, or track-based gap analysis.
+      - The user asks for advantages, selling points, innovation, opportunity, and rubric gaps together.
+    navigator_owns: intake, route selection, eligibility and rubric basis, report synthesis, next actions
+    required_passes: [positioning, evidence]
+    conditional_passes:
+      innovation: Add for technical mechanism, baseline, test, performance, or novelty claims.
+      business: Add for customer, market, pricing, finance, commercialization, or social-delivery claims.
+    report_contract: eleven_heading_full_diagnosis
+
+  quick_triage:
+    use_when:
+      - The user asks what to fix first, whether the material is assessable, or for a short pre-review.
+      - The available material is too thin for a full diagnosis.
+    navigator_owns: material snapshot, routing, decisive blockers, and next three proof-building actions
+    required_passes: [evidence]
+    conditional_passes:
+      positioning: Add when the user asks for a strength, selling-point, innovation, opportunity, or track-gap judgment.
+    report_contract: concise_snapshot_blockers_actions
+
+  narrow_specialist:
+    use_when:
+      - The user asks one bounded question about evidence, positioning, innovation, business, proposal, deck, or defense.
+    navigator_owns: routing only when GPS is invoked; otherwise the named specialist owns its bounded output
+    required_passes: []
+    conditional_passes:
+      evidence: Add for positioning, innovation, business, scoring, or any claim-strength conclusion.
+    report_contract: specialist_adaptive
+
+owners:
+  navigator: intake, rule gate, rubric route, orchestration, final synthesis, action ownership
+  positioning: essence, advantage classification, selling-point selection, opportunity framing, rubric-dimension mapping, historical method transfer
+  evidence: source existence, inspection status, claim linkage, locator, condition, contradiction, independence
+  innovation: mechanism, baseline, test validity, reproducibility, technical claim ceiling
+  business: customer stage, market facts versus hypotheses, pricing, unit economics, commercialization risk
+  proposal: project-book structure and section evidence
+  deck: slide story, visual proof, source display, timing
+  defense: question preparation, answer cards, rehearsal
+  scorer: deterministic rubric-alignment and GPS-readiness calculation only

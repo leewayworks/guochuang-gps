@@ -1,33 +1,42 @@
 ---
 name: evidence
-description: Use when collecting, classifying, cross-checking, and mapping sources for Guochuang project claims, including PDFs, PPTX, DOCX, spreadsheets, images, videos, patents, tests, contracts, and media.
+description: Use when collecting, classifying, validating or cross-checking sources for Guochuang claims across documents, data, tests, IP, customer, finance and team records.
 ---
 
 # Evidence
 
-Maintain a material map that lets a reviewer reproduce every important statement. A polished slide without a source is a lead, not proof.
+Apply the shared policies in `gps-common`. When saving a Markdown report, use the common project-name rule with topic `证据`.
 
-## Source levels
+Build a material map that lets another person find and inspect the support for every important claim. A polished slide and a path string are leads until their contents are checked.
 
-- L1: Education Ministry notices, annexes and the national contest site. These set hard rules.
-- L2: national service announcements and university official notices. These provide implementation context.
-- L3: local policy briefs and public-account explainers. Keep URL and date; they interpret but do not override L1.
-- L4: historical winning materials. Use them for patterns and calibration, never as a current rule or guarantee.
+## Own this work
 
-## Ledger
+Own source status, claim links, file existence, locators, evidence roles, independence, contradictions and redaction. Do not decide the project's positioning or improve a weak claim by rewriting it more confidently.
 
-Use one row per claim and keep these fields:
+## Validate sources
 
-id, claim, source_path_or_url, page_or_slide, source_level, status, date, owner, metric_unit, condition, limitation, privacy_flag.
+Use this state sequence:
 
-A source status moves through missing -> user_asserted -> located -> inspected -> verified or contradicted. Use primary for an inspectable first-party record and secondary for an interpretation. Do not call a claim verified because a file merely exists.
+`missing -> user_asserted -> located -> inspected -> verified | contradicted`
 
-For image-only PDF or PPTX pages, set status to visual review required and record the page or slide. Lack of extracted text is not evidence that the content is absent.
+For a local source, resolve a relative path against the project JSON file or declared project root. Give it no verified credit if the file does not exist. For a URL, record when and how it was inspected; a `verified` string does not prove that a page was opened.
 
-## Cross-checks
+A file that exists is `located`, not automatically `verified`. For image-only PDF or PPTX pages, record `visual_review_required` and the page or slide.
 
-Compare numbers, units, dates, team roles, IP names, customer names and project titles across the project book, deck, script and ledger. Return contradictions rather than choosing the nicer value. Record a privacy flag for student identity, customer confidentiality, personal contact information, unreleased IP or any document that should stay outside a public repository.
+## Build the ledger
 
-## Deliverables
+Use one row per claim and include:
 
-Return the claim-to-evidence ledger, contradiction list, missing-proof queue, source-status changes and a redaction list. Keep original competition files and confidential project material outside the public repository.
+`id`, `claim`, `source`, `page_or_slide`, `source_level`, `status`, `date`, `owner`, `metric_unit`, `baseline`, `condition`, `limitation`, `evidence_role`, `independence_group`, `ownership_scope`, `customer_stage`, `privacy_flag`.
+
+Use evidence roles `problem`, `mechanism`, `result`, `independent_validation` and `persistence`. Two records from the same `independence_group` count as one corroborating source. A quantitative claim needs a claim ID plus a locator or test condition before it can reach high evidence quality.
+
+## Cross-check
+
+Compare numbers, units, dates, names, IP ownership, customer stage, team roles and project titles across the project book, deck, script and raw records. Return the contradiction instead of selecting the nicer value.
+
+Keep `contact`, `intent`, `pilot`, `contract`, `paid` and `repeat` separate. Do not turn a logo, invitation or intention letter into a paid customer result. Do not use a patent or paper as proof of product performance, adoption or student ownership without the corresponding links.
+
+## Deliver
+
+Return the claim-to-evidence ledger, evidence-role coverage, independence groups, contradiction list, missing-proof queue, status changes and redaction list. Keep original competition files and confidential material outside the public repository.

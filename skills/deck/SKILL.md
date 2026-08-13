@@ -5,6 +5,8 @@ description: Use when outlining, reviewing, or rehearsing a Guochuang pitch deck
 
 # Deck
 
+Apply the shared policies in `gps-common`. When saving a Markdown report, use the common project-name rule with topic `PPT`.
+
 Design the deck as a sequence of reviewer decisions. Each slide needs one conclusion, one visual job and one evidence pointer.
 
 ## Build the sequence

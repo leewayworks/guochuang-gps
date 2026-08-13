@@ -5,6 +5,8 @@ description: Use when simulating Guochuang roadshows, expert questions, rebuttal
 
 # Defense
 
+Apply the shared policies in `gps-common`. When saving a Markdown report, use the common project-name rule with topic `答辩`.
+
 Rehearse the questions that can change a reviewer's decision. Challenge the strongest claim and the weakest proof. Answers must come from records, not improvised facts.
 
 ## Question matrix

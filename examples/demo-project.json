@@ -1,18 +1,82 @@
 {
   "name": "示例项目：边缘污水监测",
+  "year": 2026,
   "track": "高教主赛道",
   "group": "创意组",
   "claims": [
-    "面向工业园区的在线监测与异常预警",
-    "误报率降低 60%"
+    {
+      "id": "C-001",
+      "text": "面向工业园区的在线监测与异常预警",
+      "status": "user_asserted"
+    },
+    {
+      "id": "C-002",
+      "text": "误报率降低 60%",
+      "status": "user_asserted",
+      "limitation": "示例没有提供可复核的测试文件"
+    }
   ],
   "evidence": [
-    {"type": "survey", "status": "verified", "claim": "面向工业园区的在线监测与异常预警", "source": "evidence/interviews.pdf"},
-    {"type": "experiment", "status": "verified", "claim": "面向工业园区的在线监测与异常预警", "source": "evidence/bench-test.pdf"},
-    {"type": "ip", "status": "verified", "source": "evidence/patent.pdf"},
-    {"type": "customer", "status": "verified", "source": "evidence/pilot-letter.pdf"},
-    {"type": "financial", "status": "primary", "source": "evidence/ledger.xlsx"},
-    {"type": "team_contribution", "status": "verified", "source": "evidence/contribution.xlsx"}
+    {
+      "id": "E-001",
+      "type": "survey",
+      "status": "verified",
+      "source": "evidence/interviews.pdf",
+      "claim_ids": ["C-001"],
+      "evidence_role": "problem",
+      "rubric_dimensions": ["personal_growth", "industry_value"]
+    },
+    {
+      "id": "E-002",
+      "type": "experiment",
+      "status": "verified",
+      "source": "evidence/bench-test.pdf",
+      "claim_ids": ["C-002"],
+      "evidence_role": "result",
+      "condition": "待补充",
+      "rubric_dimensions": ["project_innovation"]
+    },
+    {
+      "id": "E-003",
+      "type": "ip",
+      "status": "verified",
+      "source": "evidence/patent.pdf",
+      "evidence_role": "mechanism",
+      "rubric_dimensions": ["project_innovation"]
+    },
+    {
+      "id": "E-004",
+      "type": "customer",
+      "status": "verified",
+      "source": "evidence/pilot-letter.pdf",
+      "evidence_role": "independent_validation",
+      "customer_stage": "pilot",
+      "rubric_dimensions": ["industry_value"]
+    },
+    {
+      "id": "E-005",
+      "type": "financial",
+      "status": "verified",
+      "source": "evidence/ledger.xlsx",
+      "evidence_role": "persistence",
+      "rubric_dimensions": ["industry_value"]
+    },
+    {
+      "id": "E-006",
+      "type": "team_contribution",
+      "status": "verified",
+      "source": "evidence/contribution.xlsx",
+      "rubric_dimensions": ["personal_growth", "team_collaboration"]
+    }
   ],
-  "team": {"members": 5, "leader_status": "在校生"}
+  "rubric_anchors": {
+    "personal_growth": 3,
+    "project_innovation": 3,
+    "industry_value": 2,
+    "team_collaboration": 2
+  },
+  "team": {
+    "members": 5,
+    "leader_status": "在校生"
+  }
 }

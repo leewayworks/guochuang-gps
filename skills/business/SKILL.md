@@ -1,35 +1,43 @@
 ---
 name: business
-description: Use when auditing or building the market, customer, business model, commercialization, finance, risk, and social-value logic of a Guochuang project.
+description: Use when a Guochuang project needs its customer, market, transaction, pricing, finance, delivery, scale, risk or social-value logic examined.
 ---
 
 # Business
 
-Build the commercial case from a real user and a traceable transaction path. Forecasts are hypotheses. Revenue, orders, pilots and contracts count as evidence only when their source and status are clear.
+Apply the shared policies in `gps-common`. When saving a Markdown report, use the common project-name rule with topic `市场`.
 
-## Maturity check
+Build the commercial or operating case from a named user, a measurable problem and a traceable delivery path. Keep facts, estimates and questions in different fields.
 
-Choose the highest stage the records support:
+## Own this work
 
-| Stage | Required proof |
-| --- | --- |
-| Idea | named user, job, pain evidence and a price question |
-| Prototype | use case, delivery path, cost drivers and a test or trial |
-| Pilot | acceptance, repeat use, buyer or partner and delivery evidence |
-| Revenue | paid transaction records, margin bridge, retention and a downside case |
+Own customer evidence, market method, transaction stage, pricing, unit economics, delivery, scale and downside risk. `positioning` owns the final opportunity statement and selling-point ranking.
 
-Do not use a revenue-style forecast to cover an untested prototype.
+## Separate customer stages
 
-## Model the chain
+Use the highest stage supported by an inspectable record:
 
-customer/job -> pain and willingness to pay -> product outcome -> acquisition/channel -> unit economics -> delivery/scale -> risk -> social value.
+`none -> contact -> intent -> pilot -> contract -> paid -> repeat`
 
-For each number record value, unit, period, assumption, source, status and owner. Keep forecasts, signed orders, paid revenue and third-party estimates in separate fields.
+Do not treat an intention, logo, pilot or forecast as revenue. Record buyer, user and beneficiary separately when they are different.
+
+## Test the chain
+
+`customer and job -> pain evidence -> product outcome -> willingness to pay or funding -> channel -> price -> unit economics -> delivery -> repeatability -> risk`
+
+For each number record value, unit, period, assumption, source, status and owner. A bottom-up market estimate shows reachable customer count, adoption assumption, price and period. Label public market data `verified_fact`, calculations `derived_estimate`, and untested statements `hypothesis`.
+
+## Match the track
+
+- Higher main: close the loop with the customer, transaction and industry value.
+- Red-tour: close the loop with beneficiary change, funding or operating continuity, delivery cost and replication boundary.
+- Industry enterprise proposition: start from the enterprise requirement, constraints, deliverables and acceptance criteria. Generic market size cannot replace command fit.
+- Results transfer: show the route from research output to product, buyer, economics and continued delivery.
 
 ## Audit
 
-Check the market-sizing method, competitor comparability, pricing basis, gross-margin bridge, cash needs, financing use, cap table, registration date, customer concentration, repeat purchase and downside case. A bottom-up estimate should show customer count, reachable share, price and time period. Never invent a market size, order, customer, patent, revenue or margin.
+Check competitor comparability, pricing basis, gross-margin bridge, cash needs, financing use, entity and equity facts, customer concentration, repeat use and downside cases. Never invent a market size, order, customer, revenue, margin or policy requirement.
 
-## Deliverables
+## Deliver
 
-Return a one-page business model, an evidence-backed customer ladder, a three-year assumption table, a risk register with triggers and owners, and five questions a skeptical reviewer will ask.
+Return a one-page operating model, customer-stage ledger, verified market facts, opportunity hypotheses, research tasks, unit-economics bridge and a risk register with triggers and owners.

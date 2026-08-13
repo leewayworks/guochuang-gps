@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="80" viewBox="0 0 760 80" role="img" aria-labelledby="title desc">
+  <title id="title">GPS (Guochuang Preparation Skills)</title>
+  <desc id="desc">Guochuang GPS project title</desc>
+  <style>
+    .title { fill: #1f2328; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .gps { font-size: 44px; font-weight: 700; letter-spacing: 0.4px; }
+    .name { font-size: 24px; font-weight: 400; }
+    .initial { font-weight: 700; }
+    @media (prefers-color-scheme: dark) { .title { fill: #f0f6fc; } }
+  </style>
+  <text x="380" y="54" text-anchor="middle" class="title">
+    <tspan class="gps">GPS</tspan>
+    <tspan class="name"> (</tspan><tspan class="name initial">G</tspan><tspan class="name">uochuang </tspan><tspan class="name initial">P</tspan><tspan class="name">reparation </tspan><tspan class="name initial">S</tspan><tspan class="name">kills)</tspan>
+  </text>
+</svg>

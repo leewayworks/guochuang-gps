@@ -1,0 +1,359 @@
+{
+  "schema_version": "1.0.0",
+  "rubric_version": "2025-05-20",
+  "sources": {
+    "cicic-2026-review-rules-status": {
+      "id": "cicic-2026-review-rules-status",
+      "url": "https://cy.ncss.cn/?_wv=5",
+      "retrieved_at": "2026-08-13",
+      "authority": "中国国际大学生创新大赛组委会（全国大学生创业服务网）",
+      "status": "official_dynamic",
+      "review_rules_status": "pending",
+      "note": "2026 大赛通知已发布；官网资料下载区的评审规则入口仍标记为待发布。"
+    },
+    "cicic-2025-rules-official": {
+      "id": "cicic-2025-rules-official",
+      "url": "https://cy.ncss.cn/en/notifications/2c93f4c696aa01a10196eca57202006a",
+      "published_at": "2025-05-20",
+      "authority": "中国国际大学生创新大赛组委会（全国大学生创业服务网）",
+      "status": "official_hard"
+    },
+    "cicic-2025-rules-19p-mirror": {
+      "id": "cicic-2025-rules-19p-mirror",
+      "url": "https://www.cupk.edu.cn/cxcy/upload/resources/file/2025/06/23/102490.pdf",
+      "retrieved_at": "2026-08-13",
+      "authority": "高校完整附件镜像（cupk.edu.cn）",
+      "status": "official_hard",
+      "role": "content_verification_mirror",
+      "note": "与官方发布页联合使用，用于核对19页评审规则全文、维度和权重。"
+    },
+    "cicic-2025-old-structure-17p": {
+      "id": "cicic-2025-old-structure-17p",
+      "url": "https://water.cau.edu.cn/module/download/downfile.jsp?classid=0&filename=446725a841a348a6a78ef79a49b83f73.pdf",
+      "authority": "中国农业大学站点附件",
+      "status": "superseded",
+      "superseded_by": "cicic-2025-rules-official",
+      "conflict_reason": "文件标题虽写2025评审规则，但全文为17页并沿用旧版教育、创新、团队、商业、社会价值结构；产业部分仅有产业命题赛道，缺少2025-05-20正式19页规则中的企业命题组与成果转化组，因此不得作为2025现行评分依据。"
+    }
+  },
+  "rubrics": [
+    {
+      "id": "cicic-2025-higher-main-creative",
+      "year": 2025,
+      "published_at": "2025-05-20",
+      "authority": "中国国际大学生创新大赛组委会（全国大学生创业服务网）",
+      "status": "official_hard",
+      "track": "higher_main",
+      "group": "creative",
+      "dimensions": [
+        {
+          "id": "personal_growth",
+          "label": "个人成长",
+          "max_points": 30
+        },
+        {
+          "id": "project_innovation",
+          "label": "项目创新",
+          "max_points": 30
+        },
+        {
+          "id": "industry_value",
+          "label": "产业价值",
+          "max_points": 25
+        },
+        {
+          "id": "team_collaboration",
+          "label": "团队协作",
+          "max_points": 15
+        }
+      ],
+      "total_points": 100,
+      "gates": [],
+      "source_urls": [
+        "https://cy.ncss.cn/en/notifications/2c93f4c696aa01a10196eca57202006a",
+        "https://www.cupk.edu.cn/cxcy/upload/resources/file/2025/06/23/102490.pdf"
+      ],
+      "source_ids": [
+        "cicic-2025-rules-official",
+        "cicic-2025-rules-19p-mirror"
+      ]
+    },
+    {
+      "id": "cicic-2025-higher-main-startup",
+      "year": 2025,
+      "published_at": "2025-05-20",
+      "authority": "中国国际大学生创新大赛组委会（全国大学生创业服务网）",
+      "status": "official_hard",
+      "track": "higher_main",
+      "group": "startup",
+      "dimensions": [
+        {
+          "id": "personal_growth",
+          "label": "个人成长",
+          "max_points": 25
+        },
+        {
+          "id": "project_innovation",
+          "label": "项目创新",
+          "max_points": 30
+        },
+        {
+          "id": "industry_value",
+          "label": "产业价值",
+          "max_points": 30
+        },
+        {
+          "id": "team_collaboration",
+          "label": "团队协作",
+          "max_points": 15
+        }
+      ],
+      "total_points": 100,
+      "gates": [],
+      "source_urls": [
+        "https://cy.ncss.cn/en/notifications/2c93f4c696aa01a10196eca57202006a",
+        "https://www.cupk.edu.cn/cxcy/upload/resources/file/2025/06/23/102490.pdf"
+      ],
+      "source_ids": [
+        "cicic-2025-rules-official",
+        "cicic-2025-rules-19p-mirror"
+      ]
+    },
+    {
+      "id": "cicic-2025-red-tour-charity",
+      "year": 2025,
+      "published_at": "2025-05-20",
+      "authority": "中国国际大学生创新大赛组委会（全国大学生创业服务网）",
+      "status": "official_hard",
+      "track": "red_tour",
+      "group": "charity",
+      "dimensions": [
+        {
+          "id": "personal_growth",
+          "label": "个人成长",
+          "max_points": 30
+        },
+        {
+          "id": "charity_value",
+          "label": "公益价值",
+          "max_points": 10
+        },
+        {
+          "id": "project_innovation",
+          "label": "项目创新",
+          "max_points": 20
+        },
+        {
+          "id": "development_prospects",
+          "label": "发展前景",
+          "max_points": 20
+        },
+        {
+          "id": "team_collaboration",
+          "label": "团队协作",
+          "max_points": 20
+        }
+      ],
+      "total_points": 100,
+      "gates": [
+        {
+          "id": "red_tour_participation",
+          "type": "required",
+          "points": 0,
+          "condition": "参加由学校、省市或全国组织的“青年红色筑梦之旅”活动。"
+        }
+      ],
+      "source_urls": [
+        "https://cy.ncss.cn/en/notifications/2c93f4c696aa01a10196eca57202006a",
+        "https://www.cupk.edu.cn/cxcy/upload/resources/file/2025/06/23/102490.pdf"
+      ],
+      "source_ids": [
+        "cicic-2025-rules-official",
+        "cicic-2025-rules-19p-mirror"
+      ]
+    },
+    {
+      "id": "cicic-2025-red-tour-creative",
+      "year": 2025,
+      "published_at": "2025-05-20",
+      "authority": "中国国际大学生创新大赛组委会（全国大学生创业服务网）",
+      "status": "official_hard",
+      "track": "red_tour",
+      "group": "creative",
+      "dimensions": [
+        {
+          "id": "personal_growth",
+          "label": "个人成长",
+          "max_points": 30
+        },
+        {
+          "id": "project_innovation",
+          "label": "项目创新",
+          "max_points": 30
+        },
+        {
+          "id": "development_prospects",
+          "label": "发展前景",
+          "max_points": 20
+        },
+        {
+          "id": "team_collaboration",
+          "label": "团队协作",
+          "max_points": 20
+        }
+      ],
+      "total_points": 100,
+      "gates": [
+        {
+          "id": "red_tour_participation",
+          "type": "required",
+          "points": 0,
+          "condition": "参加由学校、省市或全国组织的“青年红色筑梦之旅”活动。"
+        }
+      ],
+      "source_urls": [
+        "https://cy.ncss.cn/en/notifications/2c93f4c696aa01a10196eca57202006a",
+        "https://www.cupk.edu.cn/cxcy/upload/resources/file/2025/06/23/102490.pdf"
+      ],
+      "source_ids": [
+        "cicic-2025-rules-official",
+        "cicic-2025-rules-19p-mirror"
+      ]
+    },
+    {
+      "id": "cicic-2025-red-tour-startup",
+      "year": 2025,
+      "published_at": "2025-05-20",
+      "authority": "中国国际大学生创新大赛组委会（全国大学生创业服务网）",
+      "status": "official_hard",
+      "track": "red_tour",
+      "group": "startup",
+      "dimensions": [
+        {
+          "id": "personal_growth",
+          "label": "个人成长",
+          "max_points": 25
+        },
+        {
+          "id": "project_innovation",
+          "label": "项目创新",
+          "max_points": 30
+        },
+        {
+          "id": "development_prospects",
+          "label": "发展前景",
+          "max_points": 25
+        },
+        {
+          "id": "team_collaboration",
+          "label": "团队协作",
+          "max_points": 20
+        }
+      ],
+      "total_points": 100,
+      "gates": [
+        {
+          "id": "red_tour_participation",
+          "type": "required",
+          "points": 0,
+          "condition": "参加由学校、省市或全国组织的“青年红色筑梦之旅”活动。"
+        }
+      ],
+      "source_urls": [
+        "https://cy.ncss.cn/en/notifications/2c93f4c696aa01a10196eca57202006a",
+        "https://www.cupk.edu.cn/cxcy/upload/resources/file/2025/06/23/102490.pdf"
+      ],
+      "source_ids": [
+        "cicic-2025-rules-official",
+        "cicic-2025-rules-19p-mirror"
+      ]
+    },
+    {
+      "id": "cicic-2025-industry-enterprise-proposition",
+      "year": 2025,
+      "published_at": "2025-05-20",
+      "authority": "中国国际大学生创新大赛组委会（全国大学生创业服务网）",
+      "status": "official_hard",
+      "track": "industry",
+      "group": "enterprise_proposition",
+      "dimensions": [
+        {
+          "id": "personal_growth",
+          "label": "个人成长",
+          "max_points": 30
+        },
+        {
+          "id": "project_innovation",
+          "label": "项目创新",
+          "max_points": 20
+        },
+        {
+          "id": "team_collaboration",
+          "label": "团队协作",
+          "max_points": 20
+        },
+        {
+          "id": "implementation_effectiveness",
+          "label": "实现成效",
+          "max_points": 20
+        },
+        {
+          "id": "project_analysis",
+          "label": "项目分析",
+          "max_points": 10
+        }
+      ],
+      "total_points": 100,
+      "gates": [],
+      "source_urls": [
+        "https://cy.ncss.cn/en/notifications/2c93f4c696aa01a10196eca57202006a",
+        "https://www.cupk.edu.cn/cxcy/upload/resources/file/2025/06/23/102490.pdf"
+      ],
+      "source_ids": [
+        "cicic-2025-rules-official",
+        "cicic-2025-rules-19p-mirror"
+      ]
+    },
+    {
+      "id": "cicic-2025-industry-results-transfer",
+      "year": 2025,
+      "published_at": "2025-05-20",
+      "authority": "中国国际大学生创新大赛组委会（全国大学生创业服务网）",
+      "status": "official_hard",
+      "track": "industry",
+      "group": "results_transfer",
+      "dimensions": [
+        {
+          "id": "personal_growth",
+          "label": "个人成长",
+          "max_points": 25
+        },
+        {
+          "id": "project_innovation",
+          "label": "项目创新",
+          "max_points": 30
+        },
+        {
+          "id": "industry_value",
+          "label": "产业价值",
+          "max_points": 30
+        },
+        {
+          "id": "team_collaboration",
+          "label": "团队协作",
+          "max_points": 15
+        }
+      ],
+      "total_points": 100,
+      "gates": [],
+      "source_urls": [
+        "https://cy.ncss.cn/en/notifications/2c93f4c696aa01a10196eca57202006a",
+        "https://www.cupk.edu.cn/cxcy/upload/resources/file/2025/06/23/102490.pdf"
+      ],
+      "source_ids": [
+        "cicic-2025-rules-official",
+        "cicic-2025-rules-19p-mirror"
+      ]
+    }
+  ]
+}

@@ -1,29 +1,40 @@
-# 2026 rule card
+# 2026 rule card and fallback policy
 
-**Source status:** `official_hard` unless stated otherwise. Last checked 2026-08-12. Effective from 2026-07-20.
-
-Primary sources: Education Ministry notice, 教高函〔2026〕26号 (local copy: `2026/国创赛/教育部关于举办中国国际大学生创新大赛（2026）的通知-教高函〔2026〕26号.pdf`; official page: <https://www.moe.gov.cn/srcsite/A08/s5672/202607/t20260731_1445670.html>) and the national service site <https://cy.ncss.cn/>.
-
-| Check | 2026 card |
-|---|---|
-| Theme | 我敢闯，我会创 |
-| Tracks | 高教主赛道、青年红色筑梦之旅、职教、产业、萌芽 |
-| Registration | 2026-08-10 open; 2026-09-25 12:00 closes; people, teachers, group, category, and project name lock after close |
-| Rounds | School 8–10月; provincial final by 10-25; national recommendation by 10-31; final in November |
-| Team | Usually 3–15 actual core members; cross-school teams allowed where the track says so |
-| Age | 35 or younger: born 1991-03-01 or later |
-| Integrity | No plagiarism, false material, fake qualification, outsourced core work, or borrowed IP; school and province audit contribution, IP, finance, operations, and honours |
-| Repeat entry | Any prior national-final award, including bronze, cannot re-enter |
-
-## Track notes
-
-- **Higher-education main:** new engineering, medicine, agriculture, humanities, and `AI+` categories; undergraduate and graduate creative/venture groups. Venture projects require notice-date registration, a student leader who is the legal representative, leader equity ≥10%, and team equity ≥1/3.
-- **Red-tour:** teams must participate in the Youth Red-tour activity. Proof field practice, beneficiary change, sustainability, and lawful IP.
-- **Industry:** enterprise-question and conversion groups. Final format is response explanation + physical demonstration + expert questions. The main notice says teachers cannot be team members, while the industry annex allows student–teacher teams and requires a university teacher; mark this as a live conflict and confirm with the track system or organizing committee.
-- **Sprout:** ordinary high-school students; 200 finalists, 20 innovation-potential awards.
-
-The notice says the evaluation rules will be published separately on the national service site. As checked on 2026-08-12, that site still shows the evaluation-rules entry as pending update. The 2026 rubric, page limits, speaking time, and unified project-book template are therefore not confirmed here. Treat any historical score or page pattern as context, never as a 2026 hard rule.
+Last checked: 2026-08-13. Bind local execution details to their organizer, stage and publication date.
 
 ## Source hierarchy
 
-`official_hard` (Ministry notice/annex and contest site) > `official_dynamic` (live site notices) > `local_execution` (school/province) > `interpretive` (policy brief/public account) > `historical_baseline` (2025 rubric and winning examples). When sources conflict, preserve both, prefer the higher tier, and ask the team to confirm locally.
+`official_hard` > `official_dynamic` > `local_execution` > `interpretive` > `historical_baseline`.
+
+- `official_hard`: Ministry notice, annexes and the national competition site.
+- `official_dynamic`: current official announcements that may change by stage.
+- `local_execution`: school or provincial notices for their own rounds.
+- `interpretive`: policy briefs and explainers that cannot override official sources.
+- `historical_baseline`: earlier rubrics, training material and historical cases.
+
+Preserve a conflict instead of silently choosing the more convenient source. Record an owner and confirmation deadline when it affects eligibility.
+
+## Confirmed 2026 boundary
+
+Primary sources are the Education Ministry notice, 教高函〔2026〕26号, and the national service site:
+
+- <https://www.moe.gov.cn/srcsite/A08/s5672/202607/t20260731_1445670.html>
+- <https://cy.ncss.cn/>
+
+The notice covers the event framework, tracks, registration and integrity requirements. Track-specific details include venture-group entity and equity conditions, mandatory red-tour participation, and industry-group rules. The main notice and industry annex differ on teacher membership; keep that item `conflicting` until the track system or organizer confirms it.
+
+The 2026 evaluation rules are published separately. They were still pending at the last check recorded here. Do not fix page limits, presentation time, templates or scoring weights from historical material.
+
+## 2025 fallback for 2026
+
+When the 2026 rubric is unavailable, resolve the same track and group against `rubrics-2025.json` and propagate all three fields:
+
+```yaml
+rubric_version: 2025-05-20
+rubric_status: historical_baseline
+current_year_rubric_status: pending
+```
+
+Call the result `rubric_alignment_score`. It is a GPS evidence-readiness mapping over the 2025 top-level weights, not an official 2026 score.
+
+The authoritative 2025 release is the 19-page rule set published on 2025-05-20. A conflicting 17-page attachment bearing a 2025 title uses the older structure. The registry marks it `superseded`; it must not override the official release.
