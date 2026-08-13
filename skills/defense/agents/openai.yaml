@@ -1,4 +1,0 @@
-interface:
-  display_name: "GPS Defense"
-  short_description: "Rehearse expert questions with evidence"
-  default_prompt: "Use $defense to run a rigorous Guochuang mock defense on these materials."

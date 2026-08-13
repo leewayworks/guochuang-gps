@@ -22,7 +22,7 @@ Primary sources: Education Ministry notice, 教高函〔2026〕26号 (local copy
 - **Industry:** enterprise-question and conversion groups. Final format is response explanation + physical demonstration + expert questions. The main notice says teachers cannot be team members, while the industry annex allows student–teacher teams and requires a university teacher; mark this as a live conflict and confirm with the track system or organizing committee.
 - **Sprout:** ordinary high-school students; 200 finalists, 20 innovation-potential awards.
 
-The 2026 evaluation rubric, page limits, speaking time, and unified project-book template are not yet published in the notice. Until the official page changes, label any 2025 score or historical page pattern as `historical_baseline`, never as a 2026 hard rule.
+The notice says the evaluation rules will be published separately on the national service site. As checked on 2026-08-12, that site still shows the evaluation-rules entry as pending update. The 2026 rubric, page limits, speaking time, and unified project-book template are therefore not confirmed here. Treat any historical score or page pattern as context, never as a 2026 hard rule.
 
 ## Source hierarchy
 

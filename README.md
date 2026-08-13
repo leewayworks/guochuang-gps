@@ -1,68 +1,129 @@
-# Guochuang GPS
+# GPS（**G**uochuang **P**reparation **S**kills）
 
-## From idea to gold. Navigate your Guochuang journey.
+> **From idea to gold. Navigate your Guochuang journey.**
 
-Guochuang GPS（Guochuang Preparation Skills）是一套面向中国国际大学生创新大赛的开源备赛能力。它把项目诊断拆成四个容易记住的坐标：
+GPS is a public beta release of Skills for teams preparing the **中国国际大学生创新大赛** (China International College Students' Innovation Competition, or 国创赛). It connects project materials, evidence, review and practice in one workflow. The readiness score is a heuristic, not a promise of an award.
 
-- **GPA** — Guochuang Project Assessment：项目水平评分与证据覆盖；
-- **GOLD** — Gold-level Optimization & Level Diagnosis：国金差距诊断；
-- **MAP** — Materials Assessment & Preparation：材料完整性地图；
-- **CAMP** — Competition Agents for Materials & Pitch：阶段化备赛训练。
+A good project can still lose its thread when the project book, PPT, test records and rehearsal notes live in different places. GPS gives the team one route through them: find the claim, check the proof, fix the weak link, and rehearse the answer.
 
-> 证据先行 · 规则可追溯 · 评审可复核
+![Guochuang GPS concept](assets/guochuang-gps-concept.png)
 
-![Guochuang GPS preview](site/preview.svg)
+## What GPS does
 
-## 30 秒体验
+A typical review follows four steps:
+
+1. **Rule gate.** Check the year, track, group, eligibility, integrity requirements, and local deadlines.
+2. **Evidence map.** Link important claims to a file, page or slide, date, metric, condition, owner, and source status.
+3. **Material review.** Use the specialist Skill for the project book, deck, defense, innovation, business case, or evidence set.
+4. **Readiness report.** Summarize the strongest claims, unresolved gaps, risks, and the next three actions.
+
+The result is a working list for the team: what to verify, what to rewrite, what to test, and who owns the next step. In the language of the product: GPS points the route, MAP shows the missing proof, GPA shows the current readiness, and CAMP turns the gaps into practice.
+
+The workflow uses four internal labels:
+
+- **GPA** names the readiness diagnostic.
+- **MAP** is the claim and evidence ledger.
+- **CAMP** turns open gaps into practice tasks.
+- **GOLD** records the work still needed before stronger award claims are defensible.
+
+These are labels for the workflow. They are not contest categories or award predictions.
+
+## The seven Skills
+
+| Skill | Use it for |
+| --- | --- |
+| navigator | Choose the review route and identify the next task |
+| evidence | Build the claim-to-evidence ledger and find contradictions |
+| proposal | Audit the project book or business plan section by section |
+| deck | Plan and review slide headlines, visuals, sources, and time cuts |
+| defense | Prepare reviewer questions, answer cards, and rehearsal drills |
+| innovation | Check novelty, baselines, test conditions, and validation |
+| business | Review customers, pricing, commercialization, finance, and risk |
+
+Start with navigator when the project is still being sorted out. Load the specialist Skill that matches the task, and add evidence when a claim needs checking.
+
+## Where the method comes from
+
+The method was developed from structured review of local historical materials:
+
+- project books, technical descriptions, pitch decks, and defense materials from 国创赛;
+- technical-invention materials from 挑战杯大挑;
+- business plans and pitch decks from 挑战杯小挑;
+- the 2026 Ministry notice, 教高函〔2026〕26号, and information published by the national competition service site.
+
+The repository keeps reusable patterns. It does not copy a winning project's wording, numbers, screenshots, or private files. Historical materials are reference material only. They do not define the 2026 rubric or indicate a team's chance of winning.
+
+## Quick start
+
+Run the bundled synthetic example from the repository root:
 
 ```powershell
 python scripts/gps_score.py examples/demo-project.json
 ```
 
-输出包含当前水平区间、分数、证据覆盖率、置信度、阻断缺口和合规发现。示例项目刻意保留一个未核验数字，方便观察 GPS 如何阻止过度承诺。
+The example shows the input fields and the checks performed by the script. Its evidence paths are placeholders, so the report deliberately flags the unsupported numeric claim. It is not a real entry and is not a sample score for any team.
 
-双击 `site/index.html` 或将 `site/` 发布到 GitHub Pages，可浏览交互式产品介绍：罗盘、GPA 雷达、材料地图和 72 小时 CAMP 路线。
+The script returns:
 
-## 安装
+- a conditional readiness band;
+- the displayed score and the uncapped raw_score;
+- evidence coverage and confidence;
+- blocking gaps and compliance findings;
+- the notice version and rubric status.
 
-### Codex / Claude 插件
+The score is a GPS heuristic. It is not an official evaluation score. The 2026 evaluation rules, page limits, and speaking time are not treated as fixed until the official sources publish them.
+
+## Install
+
+The Skills are ordinary directories. Copy the repository's skills/ directory into the Skills directory used by your Agent tool, then load the Skill you need.
+
+Codex can also install the repository as a plugin:
 
 ```text
 codex plugin marketplace add leewayworks/guochuang-gps
 codex plugin install guochuang-gps@guochuang-gps
 ```
 
-也可以将仓库中的 `skills/` 复制到本地 skills 目录，单独加载 `navigator`、`proposal`、`deck`、`defense`、`innovation`、`business` 或 `evidence`。
+The repository includes a Claude-compatible plugin manifest. If your Agent does not support plugins, copy the skills/ directory directly.
 
-### 一次诊断怎么开始
+## Use GPS on a project folder
 
-把项目材料目录、目标年份、赛道/组别、比赛阶段和截止时间交给 `$navigator`。它先锁定规则，再建立 MAP，随后调用 GPA 与对应专家 skill。没有来源的数字只会进入缺口清单，不会被填成“看起来完整”的正文。
-
-## 2026 规则边界
-
-仓库内 `references/rules-2026.md` 摘录教育部教高函〔2026〕26号及全国大学生创业服务网的当前信息。2026 评审规则、统一页数/时长仍需等待官网或地方细则；当前评分示例明确标注为 2025 官方基线。主通知与产业附件关于教师/师生组队存在表述张力，GPS 会保留冲突并提示向赛区确认。
-
-官方通知之外的高校通知、政策提示和公众号文章只作为解释层；历史国金/国银材料只用于结构与证据模式校准，不能推出本项目奖项，也不进入公开仓库。
-
-## 仓库结构
+The default entry point is one sentence:
 
 ```text
-skills/       可单独加载的七个能力模块
-agents/       scout / auditor / judge / architect / coach 角色协议
-GPA/ GOLD/ MAP/ CAMP/  四个品牌入口
-references/   2026 规则卡、来源等级与材料规律
-scripts/      可复核的确定性评分/合规脚本
-tests/        RED 压力基线与行为契约
-site/         发布会风格的静态展示站
+Use GPS to review G:\path\to\project
 ```
 
-## 设计取舍
+`navigator` will inventory the directory, identify the material types, read the available project facts, select the specialist Skills, and ask only for missing details that can change the rule check or next action. On hosts that support dynamic Skill loading, it will invoke the needed passes; otherwise it will list them for you. You can add a year, track, stage, or deadline when you know them, but you do not need to list every file type or Skill.
 
-GPS 借鉴了 Anthropic Agent Skills、OpenAI Skills、obra/superpowers、wshobson/agents 与 ARIS 的几条成熟经验：短路由 + 按需 references、可组合角色、可恢复的结构化产物、独立审阅和本地可执行 demo。GitHub star 仅作为 2026-08-12 UTC 的生态快照，不代表质量证明。
+For tighter control, use this form:
 
-## 诚信与隐私
+```text
+Use GPS to review G:\path\to\project
+Competition: China International College Students' Innovation Competition
+Year: 2026
+Stage: provincial review
+```
 
-GPS 可以帮助团队梳理、审校、提问和排期；核心项目书、PPT、实验数据和答辩内容必须由团队成员基于真实材料完成。请不要把学生个人信息、客户保密文件、未公开专利或原始竞赛材料提交到公开仓库。项目不是官方报名系统、评委或获奖保证服务。
+The review returns `Snapshot`, `Eligibility gate`, `Current level`, `GOLD gap`, `MAP ledger summary`, `Next 3 actions`, and `Open questions`. It uses only facts traceable to the supplied materials and does not upload project files to this repository.
+
+## Repository map
+
+```text
+skills/          seven independently loadable Skills
+scripts/         deterministic readiness and compliance check
+examples/        synthetic input
+assets/          concept image
+.codex-plugin/   Codex plugin manifest
+.claude-plugin/  Claude-compatible plugin manifest
+```
+
+## Boundaries
+
+
+GPS is not the official registration system, a judge, or a guarantee of an award. It cannot confirm a qualification when the source material is missing. It cannot make the 2026 evaluation rubric official before the contest publishes it.
+
+Keep original competition files, student identities, customer-confidential material, personal contact details, and unreleased IP outside the public repository. Use the Skills on a local copy or a properly redacted export.
 
 ## License
 

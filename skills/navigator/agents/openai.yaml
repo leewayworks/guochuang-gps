@@ -1,4 +1,0 @@
-interface:
-  display_name: "GPS Navigator"
-  short_description: "Route a Guochuang project from evidence to action"
-  default_prompt: "Use $navigator to diagnose this Guochuang project and return its next three actions."

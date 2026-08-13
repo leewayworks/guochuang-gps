@@ -7,19 +7,27 @@ description: Use when collecting, classifying, cross-checking, and mapping sourc
 
 Maintain a material map that lets a reviewer reproduce every important statement. A polished slide without a source is a lead, not proof.
 
-## Evidence levels
+## Source levels
 
-- `L1` Education Ministry notice/annexes and the national contest site: hard rules.
-- `L2` national service announcements and university official notices: implementation context.
-- `L3` local policy briefs and public-account explainers: interpretation; retain URL/date and never override L1.
-- `L4` historical winning materials: pattern and calibration only, never a current rule or guarantee.
+- L1: Education Ministry notices, annexes and the national contest site. These set hard rules.
+- L2: national service announcements and university official notices. These provide implementation context.
+- L3: local policy briefs and public-account explainers. Keep URL and date; they interpret but do not override L1.
+- L4: historical winning materials. Use them for patterns and calibration, never as a current rule or guarantee.
 
-## Ledger fields
+## Ledger
 
-`id, claim, source_path_or_url, page_or_slide, source_level, status, date, owner, metric_unit, condition, limitation, privacy_flag`.
+Use one row per claim and keep these fields:
 
-Use `verified` only when the source is inspectable and the claim matches it. For image-only PDFs or PPTX, say `visual review required`; absence of text extraction is not absence of content.
+id, claim, source_path_or_url, page_or_slide, source_level, status, date, owner, metric_unit, condition, limitation, privacy_flag.
 
-## Output
+A source status moves through missing -> user_asserted -> located -> inspected -> verified or contradicted. Use primary for an inspectable first-party record and secondary for an interpretation. Do not call a claim verified because a file merely exists.
 
-Return a claim–evidence ledger, contradiction list, missing-proof queue, and a redaction list for confidential or personal information. Preserve original files outside the public repository.
+For image-only PDF or PPTX pages, set status to visual review required and record the page or slide. Lack of extracted text is not evidence that the content is absent.
+
+## Cross-checks
+
+Compare numbers, units, dates, team roles, IP names, customer names and project titles across the project book, deck, script and ledger. Return contradictions rather than choosing the nicer value. Record a privacy flag for student identity, customer confidentiality, personal contact information, unreleased IP or any document that should stay outside a public repository.
+
+## Deliverables
+
+Return the claim-to-evidence ledger, contradiction list, missing-proof queue, source-status changes and a redaction list. Keep original competition files and confidential project material outside the public repository.

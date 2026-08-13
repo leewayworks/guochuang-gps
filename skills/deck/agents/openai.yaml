@@ -1,4 +1,0 @@
-interface:
-  display_name: "GPS Deck"
-  short_description: "Build a clear, defensible pitch deck"
-  default_prompt: "Use $deck to turn these verified project claims into a slide-by-slide story."
